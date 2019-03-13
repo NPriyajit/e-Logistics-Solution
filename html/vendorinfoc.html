@@ -1,0 +1,210 @@
+<html>
+
+    <head> 
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Vendor Form</title>
+        <script language="javascript">
+            function changessl()
+            {
+                var i;
+                i=document.f1.cmbssl.selectedIndex;
+                if(i==0)
+                {
+                    document.f1.urlvend.value=" ";
+                }
+                else if(i==1)
+                {
+                    document.f1.urlvend.value='http:\\\\';
+                }
+                else{
+                    document.f1.urlvend.value='https:\\\\';
+                }
+            }
+            function getfocus()
+            {
+                if(document.f1.urlvend.value=="")//!(document.f1.urlvend.value=='http:\\\\'|| document.f1.urlvend.value=='https:\\\\')
+                {
+                document.f1.cmbssl.focus();
+                }
+            }
+
+            function unfocus()
+            {
+                var j;
+                j=document.f1.countrycode.selectedIndex;
+                if(j==1)
+                {
+                    document.f1.numphno.value="enter 10 digit number";
+                }
+            }
+        
+        </script>
+
+        <datalist id="cities">
+            <option value="cuttack">cuttack</option>
+            <option value="Bhubaneswar">Bhubaneswar</option>
+            <option value="sambalpur">sambalpur</option>
+            <option value="Athagarh">Athagarh</option>
+        </datalist>
+
+        <datalist id="states">
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunchal Pradesh">Arunchal Pradesh</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Odisha">Odisha</option>
+        </datalist>
+    </head>
+
+
+
+
+    <body>
+      <header class="header">
+          <h1 id="headertext">e-Logistics<sub id="subtext"> Solutions</sub></h1>
+      </header>
+      <fieldset>
+            <legend>Vendor Details</legend>
+        <form name="f1" action="../jsp/vendorinfos.jsp">            
+            <table>
+                <tr>
+                    <td>
+                        Vendor Code:
+                    </td>
+                    <td>
+                        <input type="number" title="Enter your registration No" name="numvendno"  autocomplete="on" required>
+                        <font color="red">*</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Vendor Name:
+                    </td>
+                    <td>
+                        <input type="text" title="Enter your company Name" name="txtvendname" required>
+                        <font color="red">*</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contact Person:
+                    </td>
+                    <td>
+                        <input type="text" name="txtcontper"  autocomplete="on">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Locality:
+                    </td>
+                    <td>
+                        <input type="text" name="txtlocality"  list="cities">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        City:
+                    </td>
+                    <td>
+                        <input type="text" name="txtcity" list="cities">
+                        <font color="red">*</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        State:
+                    </td>
+                    <td>
+                        <input type="text" name="txtstate" list="states"  >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone no:
+                    </td>
+                    <td>
+                        <select name="countrycode" id="ccode" onchange="unfocus()">
+                            <option>-CODE-</option>
+                            <option>+91</option>
+                        </select>
+                        <input type="number" maxlength="10" id="phno" name="numphno" title="enter your phone no" min="0"  required>
+                        <font color="red">*</font>
+                    </td>
+                    <td>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                    </td>
+                    
+                    <td>
+                        Fax:
+                    </td>
+                    <td>
+                        <input type="number" min="0" name="numfax" id="bar"  title="enter fax number" required autocomplete="off"> 
+                        <font color="red">*</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date:
+                    </td>
+                    <td>
+                        <input type="date" name="date" required>
+                        <font color="red">*</font>
+                    </td>
+                    <td>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                    </td>
+                   
+                    <td>
+                        GST no:
+                    </td>
+                
+                    <td>
+                        <input type="number" id="bar" name="numgst" required autocomplete="off">
+                        <font color="red">*</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email-ID:
+                    </td>
+                    <td>
+                        <input type="email" name="email" required title="enter a valid email">
+                        <font color="red">*</font>
+                    </td>
+                    <td>
+                         &nbsp; &nbsp; &nbsp; &nbsp;
+                    </td>
+                    <td>
+                        Website:
+                    </td>
+                    <td>
+                        <select name="cmbssl" id="combossl" onchange="changessl()">
+                            <option>-SSL-</option>
+                            <option>HTTP</option>
+                            <option>HTTPS</option>
+                        </select>
+                        <input type="url" id="websitebar" name="urlvend" onfocus="getfocus()">
+                    </td>
+
+                </tr>
+            </table>
+            <div class="button">
+                <input id="btn" type="submit" name="btnsub" value="submit">
+                <input id="btn" type="reset" name="btnres" value="reset">
+                <input id="btn" type="button" name="btnfind" value="find" onclick="window.open('../jsp/vendorfindinfoc.jsp')">
+            </div>   
+        </form>
+    </fieldset>
+        <div class="footer">
+                <p id="footertext">&copy;N.Priyajit</p>
+        </div>
+    
+    </body>
+
+
+</html>        

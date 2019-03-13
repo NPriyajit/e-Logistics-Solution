@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<datalist id="cities">
+<option value="cuttack">cuttack</option>
+<option value="Bhubaneswar">Bhubaneswar</option>
+<option value="sambalpur">sambalpur</option>
+<option value="Athagarh">Athagarh</option>
+</datalist>
+<datalist id="states">
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunchal Pradesh">Arunchal Pradesh</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Bihar">Bihar</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+<option value="Odisha">Odisha</option>
+</datalist>
+
+<title>Company Info | Form</title>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+    body{
+        font-family: 'Lato', sans-serif; 
+        width:100%;
+        height:80%;
+    }
+center
+{
+    margin:20px;
+    padding:10px;
+}
+fieldset{
+    width:70%;
+    background-color:darkgray;
+    border: 2px solid #555;
+}
+legend{
+font-size:30px;
+font-weight: bold;
+color: black;
+align: center;
+}
+
+.space
+{
+    padding:10px;
+}
+#btn
+{
+    width:80px;
+    }
+.header
+{
+    width:100%;
+    height:160px;
+    background-image:
+    linear-gradient(
+         rgb(125, 49, 155),white
+    );
+    font-weight: 800;
+    font-size: 50px;   
+    border-radius:10px;
+}
+
+.header #super
+{
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.footer
+{
+    background-image:linear-gradient( white,rgb(125, 49, 155));
+    width:100%;
+    height:160px;
+    vertical-align:top;
+    border-radius:10px;
+}
+
+ th{
+  /* padding:10px;*/
+   margin-right:5px;
+   text-align:right;
+}
+ td{
+    right:10px;
+    padding:5px;
+ }
+
+ .astericmark
+ {
+     color:red;
+
+}
+
+input{
+    width:200px;
+    align:right;
+    border-radius:5px;
+    border: 2px solid #555;
+}
+
+.header.t1.t2.t3 #imgtag
+{
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+    float:right;
+    background-repeat: no-repeat;
+}
+
+#src
+{
+    width:100px;
+    height:50px;
+    float:right;
+    vertical-align: top;
+    border-radius:10px;
+
+}
+table{padding:0px;}
+
+
+</style>
+
+<div class="header">
+    <table class="t1">
+
+   <tr class="t2">
+   <td class="t3"><p>e-Logistics<sub id="super">Solutions</sub></p></td>
+  <td > <img id="src" src="./logo.png"></td> 
+   </tr>   
+</table>
+
+</div>
+
+</head>
+
+<body>
+  
+    <center>
+<fieldset>
+ <legend >Vendor Profile</legend>
+<br><br/>
+<div class="form">
+<form name="f1" action="companyinfos.jsp">
+<table width="89%">
+<tr>
+<th valign="center">Vendor Code:</th>
+<td> </td>
+<td id="txtboxdown"><input type="number" title="Enter your registration No" name="numvendno"  autocomplete="on" required><p style="color:red"></td>
+<td><p class="astericmark">*</p> </td>
+</tr>
+<tr>
+<th>Vendor Name:</th>
+<td class="space"> </td>
+<td><input type="text" title="Enter your company Name" name="txtvendname" required></td>
+<td><p class="astericmark">*</p></td>
+</tr>
+<tr>
+<th > Contact Person:</th>
+<td class="space"></td>
+<td  ><input type="text" name="txtcontper"  autocomplete="on"></td>
+<td></td>
+</tr>
+<tr>
+<th ><br>Locality:</th>
+<td class="space"> </td>
+<td ><input type="text" name="txtlocality"  list="cities"></td>
+<td></td>
+</tr>
+<tr>
+<th>City:</th>
+<td class="space"></td>
+<td><input type="text" name="txtcity"  list="cities" required><font color="red">&nbsp;*</font></td>
+</tr>
+<tr>
+<th>State:</th>
+<td class="space"></td>
+<td><input type="text" name="txtstate" list="states"  ></td>
+</tr>
+<tr>
+<th >Phone No:</th>
+<td class="space"></td>
+<td><input type="number" maxlength="10" name="numphno" title="enter your phone no" min="0"  required><font color="red">&nbsp;*</font></td>
+<td > &nbsp; &nbsp; &nbsp; </td>
+<th >Fax:&nbsp; </th>
+<td class="space"></td>
+<td align="left"><input type="number" min="0" name="numfax"  title="enter fax number" required autocomplete="off"><font color="red">&nbsp;*</font></td>
+</tr>
+
+<tr>
+<th >Email-ID:</th>
+<td class="space"></td>
+<td align="left"><input type="email" name="emailpid" required><font color="red">&nbsp;*</font></td>
+<td>&nbsp; &nbsp; &nbsp; </td>
+<th>GST No:</th>
+<td class="space"></td>
+<td ><input type="number" name="numgst" required autocomplete="off"><font color="red">&nbsp;*</font></td>
+</tr>
+<tr>
+<th>Website:</th>
+<td></td>
+<td ><input type="url" name="urlsite" value="http:\\"  title="Enter your website/creation url" required><font color="red">&nbsp;*</font></td>
+
+<td class="space"></td>
+<th>Date:</th>
+<td class="space"></td>
+<td><input type="date" name="date"> </td>
+</tr>
+
+</table>
+ <table >
+    <tr>
+   <td valign="bottom"><input type="submit" id="btn" value="submit" name="btnsub" style="border-radius: 5px;"> </td>
+     <td>&nbsp;&nbsp;&nbsp;</td>   
+     <td valign="bottom">  <input  id="btn" type="reset" value="reset" name="btnres" style="border-radius: 5px;"></td> 
+     <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="bottom"> <input type="button" id="btn" value="find" name="btnfind" style="border-radius: 5px;"></td>
+    </tr> 
+    </table>  
+</form>
+</div>
+</fieldset>
+<br><br><br>
+
+</center>
+<footer class="footer">
+        <p align="center" >&copy; N.Priyajit</p>
+</footer>
+</body>
+</html>
